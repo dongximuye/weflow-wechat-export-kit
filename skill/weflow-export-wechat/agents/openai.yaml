@@ -1,0 +1,6 @@
+interface:
+  display_name: "WeFlow 微信聊天导出"
+  short_description: "指导安装 WeFlow、完整导出聊天并校验媒体资料"
+  default_prompt: "使用 $weflow-export-wechat 指导我导出微信聊天并交给 Codex 分析。"
+
+
