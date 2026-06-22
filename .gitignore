@@ -1,0 +1,9 @@
+dist/
+*.exe
+*.zip
+*.jsonl
+__pycache__/
+*.pyc
+验收报告.json
+
+
