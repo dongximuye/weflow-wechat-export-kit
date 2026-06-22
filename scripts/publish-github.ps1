@@ -9,8 +9,8 @@ $dist = Join-Path $projectRoot 'dist'
 $releaseNotes = Join-Path $projectRoot 'RELEASE_NOTES.md'
 $assets = @(
     (Join-Path $dist 'WeFlow-4.5.1-x64-Setup.exe'),
-    (Join-Path $dist 'WeFlow微信导出Skill.zip'),
-    (Join-Path $dist 'WeFlow微信聊天导出完整交付包.zip'),
+    (Join-Path $dist 'WeFlow.Skill.zip'),
+    (Join-Path $dist 'WeFlow.zip'),
     (Join-Path $dist 'SHA256SUMS.txt')
 )
 
@@ -66,6 +66,7 @@ try {
 finally {
     Pop-Location
 }
+
 
 
 
