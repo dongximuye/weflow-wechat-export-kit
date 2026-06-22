@@ -2,9 +2,17 @@
 
 这套资料帮助不熟悉技术的同事，在 Codex 引导下使用 WeFlow 导出微信聊天文字、图片、文件、语音和视频，并在分析前自动检查资料是否完整。
 
+## 下载地址
+
+- 发布页：<https://github.com/dongximuye/weflow-wechat-export-kit/releases/tag/v1.0.0>
+- 完整交付包：<https://github.com/dongximuye/weflow-wechat-export-kit/releases/download/v1.0.0/WeFlow.zip>
+- 单独安装器：<https://github.com/dongximuye/weflow-wechat-export-kit/releases/download/v1.0.0/WeFlow-4.5.1-x64-Setup.exe>
+
+当前仓库为私有仓库，下载者需要登录 GitHub 并获得仓库访问权限。
+
 ## 最短使用路径
 
-1. 从 GitHub Release 下载“完整交付包”。
+1. 从上方 GitHub Release 下载“完整交付包”。
 2. 解压到空间充足的位置。
 3. 打开 Codex，把 [Codex完整启动提示词.md](prompts/Codex完整启动提示词.md) 全文复制进去。
 4. 按 Codex 指引安装 Skill，并重启 Codex。
