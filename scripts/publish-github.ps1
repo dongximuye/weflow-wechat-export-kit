@@ -13,6 +13,7 @@ $assets = @(
     (Join-Path $dist 'WeFlow.zip'),
     (Join-Path $dist 'SHA256SUMS.txt'),
     (Join-Path $projectRoot 'docs\WeFlow安装与导出截图教程.html'),
+    (Join-Path $projectRoot 'docs\WeFlow安装与导出截图教程.pdf'),
     (Join-Path $projectRoot 'docs\给Codex的完整启动提示词.md')
 )
 

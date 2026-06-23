@@ -9,7 +9,7 @@
 1. [`docs/WeFlow安装与导出截图教程.html`](docs/WeFlow安装与导出截图教程.html)
 2. [`docs/给Codex的完整启动提示词.md`](docs/给Codex的完整启动提示词.md)
 
-HTML 教程是给人看的“照着点”说明；启动提示词是复制给 Codex 的。Codex 会根据提示词访问本公共仓库并下载 Release。
+HTML 教程是给人看的“照着点”说明，已内嵌截图，单独下载也能看到配图；启动提示词是复制给 Codex 的。若电脑不方便打开 HTML，也可以使用 [`docs/WeFlow安装与导出截图教程.pdf`](docs/WeFlow安装与导出截图教程.pdf)。
 
 ## 下载地址
 
@@ -34,6 +34,7 @@ HTML 教程是给人看的“照着点”说明；启动提示词是复制给 Co
 ## 文件说明
 
 - `docs/WeFlow安装与导出截图教程.html`：发给同事看的独立 HTML 教程，不放进 `WeFlow.zip`。
+- `docs/WeFlow安装与导出截图教程.pdf`：HTML 打不开或图片异常时使用的备用 PDF。
 - `docs/给Codex的完整启动提示词.md`：发给同事复制给 Codex 的启动提示词，不要求同事研究 GitHub。
 - `skill/weflow-export-wechat`：Codex Skill。
 - `安装Skill.ps1`：将本地 Skill 安装到当前用户的 Codex Skills 目录。
