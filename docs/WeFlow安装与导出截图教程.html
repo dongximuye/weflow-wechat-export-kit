@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeFlow 微信聊天导出截图教程</title>
+  <style>
+    :root { --ink:#202124; --muted:#5f6368; --line:#e5e7eb; --soft:#f7f4ef; --card:#fff; --brand:#9b7b56; --warn:#b45309; --danger:#b91c1c; --ok:#047857; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif; background:linear-gradient(180deg,#fbfaf8 0%,#f3f0ea 100%); line-height:1.7; }
+    header { padding:48px 24px 28px; background:#fff; border-bottom:1px solid var(--line); }
+    main { max-width:1080px; margin:0 auto; padding:24px; }
+    h1 { margin:0 0 12px; font-size:34px; line-height:1.25; }
+    h2 { margin:0 0 14px; font-size:24px; }
+    h3 { margin:18px 0 8px; font-size:18px; }
+    p { margin:8px 0; }
+    a { color:#1d4ed8; }
+    .lead { color:var(--muted); font-size:17px; max-width:860px; }
+    .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 10px 28px rgba(42,35,26,.06); }
+    .step { margin:18px 0; }
+    .step-number { display:inline-flex; width:30px; height:30px; align-items:center; justify-content:center; border-radius:999px; background:var(--brand); color:white; font-weight:700; margin-right:8px; }
+    .notice { border-left:5px solid var(--brand); background:var(--soft); padding:14px 16px; border-radius:12px; margin:14px 0; }
+    .warn { border-left-color:var(--warn); background:#fff7ed; }
+    .danger { border-left-color:var(--danger); background:#fef2f2; }
+    .ok { border-left-color:var(--ok); background:#ecfdf5; }
+    img { display:block; max-width:100%; height:auto; margin:12px auto; border-radius:14px; border:1px solid var(--line); background:white; }
+    code { padding:2px 6px; border-radius:6px; background:#f1f5f9; font-family:Consolas,"SFMono-Regular",monospace; }
+    .toc a { display:block; padding:4px 0; text-decoration:none; }
+    .checklist li { margin:6px 0; }
+    footer { color:var(--muted); padding:28px 24px 48px; text-align:center; }
+  </style>
+</head>
+<body>
+  <header>
+    <main>
+      <h1>WeFlow 微信聊天导出截图教程</h1>
+      <p class="lead">这是一份给同事看的“照着点”教程。先看本教程，再把同目录下的 <code>给Codex的完整启动提示词.md</code> 复制给 Codex。真正的工具包由 Codex 从 GitHub Release 下载。</p>
+      <div class="notice warn"><strong>先别离开电脑：</strong>前 5 分钟 Codex 可能会请求访问 GitHub、下载文件、读取目录或安装 Skill。请等这些权限确认完，再去忙别的事情。</div>
+    </main>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card">
+        <h2>你需要准备</h2>
+        <ul>
+          <li>Windows 电脑，已安装并登录微信。</li>
+          <li>Codex 桌面版。</li>
+          <li>空间充足的磁盘目录，用于安装和导出。</li>
+          <li>要导出的聊天对象和时间范围。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>不要上传这些</h2>
+        <ul>
+          <li>微信数据库、密钥、原始导出包。</li>
+          <li>包含孩子、家长、客户、手机号、地址、支付信息的原始内容。</li>
+          <li>未经脱敏的图片、文件、语音和视频。</li>
+        </ul>
+      </div>
+      <div class="card toc">
+        <h2>操作目录</h2>
+        <a href="#codex">1. 先让 Codex 接手</a>
+        <a href="#install">2. 安装 WeFlow</a>
+        <a href="#database">3. 找到微信数据库位置</a>
+        <a href="#key">4. 首次配置和密钥</a>
+        <a href="#export">5. 创建导出任务</a>
+        <a href="#finish">6. 完成后交给 Codex 验收</a>
+      </div>
+    </section>
+
+    <section id="codex" class="card step">
+      <h2><span class="step-number">1</span>先让 Codex 接手</h2>
+      <p>打开同目录下的 <code>给Codex的完整启动提示词.md</code>，全文复制给 Codex。Codex 会先做权限预检，再去公共 GitHub 仓库下载工具包。</p>
+      <div class="notice">如果 Codex 一直停在“需要批准”或“等待权限”，通常不是坏了，而是在等你点确认。请先处理权限请求。</div>
+      <p>仓库地址是：<a href="https://github.com/dongximuye/weflow-wechat-export-kit">https://github.com/dongximuye/weflow-wechat-export-kit</a></p>
+    </section>
+
+    <section id="install" class="card step">
+      <h2><span class="step-number">2</span>安装 WeFlow</h2>
+      <p>Codex 会优先从 GitHub Release 获取工具包。你也可以根据 Codex 指引手动打开安装器所在位置。</p>
+      <h3>2.1 找到安装器</h3>
+      <p>找到 <code>WeFlow-4.5.1-x64-Setup.exe</code>，双击打开。</p>
+      <img src="assets/01-installer-location.png" alt="找到 WeFlow 安装器">
+      <h3>2.2 选择安装方式</h3>
+      <p>通常选择“仅为我安装”，然后点击“下一步”。如果电脑空间紧张，请选择 D 盘等空间较大的位置。</p>
+      <img src="assets/02-install-options.png" alt="选择仅为当前用户安装">
+      <h3>2.3 完成并启动</h3>
+      <p>完成安装时保留“运行 WeFlow”勾选，点击“完成”。桌面通常也会出现快捷方式。</p>
+      <img src="assets/03-install-finish.png" alt="完成安装并运行 WeFlow">
+    </section>
+
+    <section id="database" class="card step">
+      <h2><span class="step-number">3</span>从微信设置里找到数据库位置</h2>
+      <p>WeFlow 首次配置时可能需要确认微信数据库或文件目录。不要凭感觉猜路径，按下面方式找：</p>
+      <ol>
+        <li>打开 Windows 微信。</li>
+        <li>点击左下角“三横线 / 设置”。</li>
+        <li>进入“文件管理”或类似入口。</li>
+        <li>查看微信文件、数据所在位置。</li>
+        <li>回到 WeFlow，选择对应的数据库目录或上级微信数据目录。</li>
+      </ol>
+      <div class="notice danger">这里只是定位目录。不要移动、删除、重命名微信数据库，也不要把数据库文件发给 Codex 或任何人。</div>
+    </section>
+
+    <section id="key" class="card step">
+      <h2><span class="step-number">4</span>首次配置和自动获取密钥</h2>
+      <p>如果电脑之前配置过 WeFlow，可能直接进入“解密密钥”页面；这是正常现象。</p>
+      <img src="assets/04-key-setup-redacted.png" alt="WeFlow 解密密钥页面">
+      <ol>
+        <li>先保存微信里未完成的文字、文件传输或工作。</li>
+        <li>按 WeFlow 提示退出已经登录的微信。</li>
+        <li>点击“自动获取密钥”。</li>
+        <li>按界面指示操作，完成后返回主界面。</li>
+      </ol>
+      <div class="notice danger">密钥不需要给 Codex 看。不要复制、截图、发送或写进文档。</div>
+      <div class="notice warn">聊天记录很多时，首次加载可能很慢，甚至短暂报错。先等待几分钟，点击刷新，再判断是否真的失败。不要一报错就重装。</div>
+    </section>
+
+    <section id="export" class="card step">
+      <h2><span class="step-number">5</span>创建导出任务</h2>
+      <h3>5.1 进入导出页</h3>
+      <p>点击左侧“导出”。</p>
+      <img src="assets/05-export-entry-redacted.png" alt="WeFlow 导出入口">
+      <h3>5.2 选择导出位置和会话</h3>
+      <p>顶部选择空间充足的导出位置；在“私聊”或“群聊”中搜索目标会话，点击右侧“导出”。</p>
+      <img src="assets/06-export-list-redacted.png" alt="选择导出位置和目标会话">
+      <h3>5.3 选择格式、时间和媒体</h3>
+      <p>文本格式建议选择 <strong>ChatLab JSONL</strong>，这是更适合 Codex 读取和完整性检查的结构化格式。时间范围按需要选择；媒体按分析需要勾选图片、文件、语音、视频、表情包。</p>
+      <img src="assets/07-export-format-media-redacted.png" alt="选择 ChatLab JSONL、时间范围和媒体类型">
+      <h3>5.4 设置文件大小和发送者名称</h3>
+      <p>文件大小上限会影响能否导出大附件。无法预判时，优先保证完整性。群聊发送者名称一般可选“备注优先”或“群聊昵称优先”。</p>
+      <img src="assets/08-export-advanced-redacted.png" alt="设置文件上限、语音转文字和发送者名称">
+      <h3>5.5 等任务真正完成</h3>
+      <p>点击“创建导出任务”后，进入任务中心。任务仍在进行中时，不要移动导出目录，也不要说已经成功。</p>
+      <img src="assets/09-task-center-redacted.png" alt="任务中心查看导出进度">
+    </section>
+
+    <section id="finish" class="card step">
+      <h2><span class="step-number">6</span>导出完成后交给 Codex 验收</h2>
+      <p>任务完成后，把完整导出目录路径发给 Codex。不要只给单个 JSONL，也不要改变 <code>texts</code>、<code>images</code>、<code>file</code>、<code>videos</code> 等目录的相对位置。</p>
+      <ul class="checklist">
+        <li>Codex 应检查聊天对象、时间范围、消息数量、首尾时间。</li>
+        <li>Codex 应检查 JSONL/文本文件、媒体目录、乱码、空文件、路径断裂。</li>
+        <li>Codex 最后应生成 <code>export_integrity_report.md</code>。</li>
+      </ul>
+      <div class="notice ok">只有完整性检查通过后，才算“导出成功”。后续给 AI 分析时，优先使用脱敏后的文本、媒体清单和验收报告。</div>
+    </section>
+  </main>
+
+  <footer>WeFlow 是第三方工具。请仅在授权、合规、必要的范围内处理微信聊天记录。</footer>
+</body>
+</html>

@@ -1,4 +1,4 @@
-param([Parameter(Mandatory = $true)][string]$InstallerPath)
+﻿param([Parameter(Mandatory = $true)][string]$InstallerPath)
 
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
@@ -8,7 +8,6 @@ if (-not (Test-Path -LiteralPath $InstallerPath -PathType Leaf)) { throw "未找
 if (Test-Path -LiteralPath $dist) { Remove-Item -LiteralPath $dist -Recurse -Force }
 New-Item -ItemType Directory -Path $staging -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRoot 'skill') -Destination $staging -Recurse
-Copy-Item -LiteralPath (Join-Path $projectRoot 'prompts') -Destination $staging -Recurse
 Copy-Item -LiteralPath (Join-Path $projectRoot 'README.md') -Destination $staging
 Copy-Item -LiteralPath (Join-Path $projectRoot 'SECURITY.md') -Destination $staging
 Copy-Item -LiteralPath (Join-Path $projectRoot '安装Skill.ps1') -Destination $staging
@@ -27,7 +26,6 @@ Get-FileHash -LiteralPath $installerCopy, $skillZip, $fullZip -Algorithm SHA256 
     ForEach-Object { "$($_.Hash)  $(Split-Path $_.Path -Leaf)" } |
     Set-Content -LiteralPath (Join-Path $dist 'SHA256SUMS.txt') -Encoding UTF8
 Write-Output "发布包已生成：$dist"
-
 
 
 
