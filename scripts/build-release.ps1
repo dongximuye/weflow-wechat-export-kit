@@ -21,8 +21,7 @@ $skillZip = Join-Path $dist 'WeFlow.Skill.zip'
 $fullZip = Join-Path $dist 'WeFlow.zip'
 Compress-Archive -LiteralPath (Join-Path $projectRoot 'skill\weflow-export-wechat') -DestinationPath $skillZip -CompressionLevel Optimal
 Compress-Archive -Path (Join-Path $staging '*') -DestinationPath $fullZip -CompressionLevel Optimal
-$installerCopy = Join-Path $dist (Split-Path $InstallerPath -Leaf)
-Get-FileHash -LiteralPath $installerCopy, $skillZip, $fullZip -Algorithm SHA256 |
+Get-FileHash -LiteralPath $fullZip -Algorithm SHA256 |
     ForEach-Object { "$($_.Hash)  $(Split-Path $_.Path -Leaf)" } |
     Set-Content -LiteralPath (Join-Path $dist 'SHA256SUMS.txt') -Encoding UTF8
 Write-Output "发布包已生成：$dist"

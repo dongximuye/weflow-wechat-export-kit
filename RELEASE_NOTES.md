@@ -5,7 +5,7 @@
 - WeFlow 4.5.1 x64 安装器。
 - `weflow-export-wechat` Codex Skill。
 - ChatLab JSONL 与媒体相对路径验收工具。
-- 面向同事的自包含 HTML 截图教程、备用 PDF 和完整启动提示词作为独立 Release 附件分发，不放入 `WeFlow.zip`。
+- 面向同事的自包含 HTML 截图教程和完整启动提示词作为独立 Release 附件分发，不放入 `WeFlow.zip`。
 
 ## 已验证
 
@@ -14,6 +14,7 @@
 - 故障测试：能够发现损坏 JSONL、缺失媒体和路径越界。
 - `WeFlow.zip` 不包含同事版 HTML 教程，只保留 Codex 下载所需工具包。
 - HTML 教程已内嵌截图，单独下载也能看到配图。
+- Release 只保留最少必要附件：`WeFlow.html`、`Codex.md`、`WeFlow.zip`、`SHA256SUMS.txt`。
 
 ## 安全提示
 

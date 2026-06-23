@@ -8,12 +8,9 @@ $projectRoot = Split-Path $PSScriptRoot -Parent
 $dist = Join-Path $projectRoot 'dist'
 $releaseNotes = Join-Path $projectRoot 'RELEASE_NOTES.md'
 $assets = @(
-    (Join-Path $dist 'WeFlow-4.5.1-x64-Setup.exe'),
-    (Join-Path $dist 'WeFlow.Skill.zip'),
     (Join-Path $dist 'WeFlow.zip'),
     (Join-Path $dist 'SHA256SUMS.txt'),
     (Join-Path $projectRoot 'docs\WeFlow安装与导出截图教程.html'),
-    (Join-Path $projectRoot 'docs\WeFlow安装与导出截图教程.pdf'),
     (Join-Path $projectRoot 'docs\给Codex的完整启动提示词.md')
 )
 
